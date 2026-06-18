@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dinner's on You!</title>
+    <!-- CheerpJ: WebAssembly JVM that runs the original Java 8 applet in-browser -->
+    <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>
+    <style>
+      body {
+        background: #000;
+        color: #fff;
+        font-family: system-ui, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 16px;
+      }
+      h1 { margin: 8px 0; }
+      .applet-wrap {
+        display: inline-block;
+        border: 1px solid #333;
+        background: #000;
+        min-width: 1000px;
+        min-height: 600px;
+      }
+      .controls { display: flex; justify-content: center; gap: 64px; margin-top: 16px; }
+      .p1 { color: #ff0000; }
+      .p2 { color: #0040ff; }
+      .controls p { margin: 4px 0; }
+    </style>
+  </head>
+  <body>
+    <h1>Dinner's on You!</h1>
+    <p><b>Taking the dinner dispute to space!</b> &mdash; Dinner for two, who's gunna pay?</p>
+
+    <div class="applet-wrap">
+      <!-- CheerpJ scans for <applet> tags and runs them via the WASM JVM -->
+      <applet archive="Asteroids.jar" code="Asteroids" width="1000" height="600"></applet>
+    </div>
+
+    <div class="controls">
+      <div class="p1">
+        <p><b>Player One</b></p>
+        <p>W &mdash; Forward Thrust</p>
+        <p>A/D &mdash; Turn Left/Right</p>
+        <p>S &mdash; Mine Placement/Detonation</p>
+        <p>Q &mdash; Destroyer Waypoint</p>
+        <p>E &mdash; Sentry</p>
+        <p>Space &mdash; Shoot</p>
+      </div>
+      <div class="p2">
+        <p><b>Player Two</b></p>
+        <p>8 &mdash; Forward Thrust</p>
+        <p>4/6 &mdash; Turn Left/Right</p>
+        <p>5 &mdash; Mine Placement/Detonation</p>
+        <p>7 &mdash; Destroyer Waypoint</p>
+        <p>9 &mdash; Sentry</p>
+        <p>0 &mdash; Shoot</p>
+      </div>
+    </div>
+
+    <script>
+      // Java 8 is the default and is required for applet support.
+      cheerpjInit();
+    </script>
+  </body>
+</html>
