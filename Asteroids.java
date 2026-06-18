@@ -187,6 +187,30 @@ public class Asteroids extends Applet implements Runnable, KeyListener
 		img = createImage(dim.width, dim.height); //Creates the back buffer
 		g = img.getGraphics();                    //retrives Graphics object for back buffer
 
+		//Auto-starts the game as soon as the applet finishes loading
+		//(no need to press ENTER to begin; ENTER still pauses/unpauses)
+		playerOne.setActive(true);
+		playerTwo.setActive(true);
+		sentryOne.setActive(true);
+		sentryTwo.setActive(true);
+		baseOne.setActive(true);
+		baseTwo.setActive(true);
+		destroyerOne.setActive(true);
+		destroyerTwo.setActive(true);
+		wayOne.setActive(true);
+		wayTwo.setActive(true);
+		minesOne.setActive(true);
+		minesTwo.setActive(true);
+
+		for(int y=0; y<turretsRed.length; y++)
+		{
+			turretsRed[y].setActive(true);
+		}
+		for(int y=0; y<turretsBlue.length; y++)
+		{
+			turretsBlue[y].setActive(true);
+		}
+
 		//Creates new thread and starts it
 		thread = new Thread(this);
 		thread.start();
